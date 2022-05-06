@@ -23,7 +23,7 @@ const firestoreReducer = (state, action) => {
 
 const useFirestore = (collection) => {
     const [response, dispatch] = useReducer(firestoreReducer, initialState);
-    const [isCanceled, setIsCanceled] = useState(false);
+    const [isCancelled, setIsCanceled] = useState(false);
 
     // collection ref
     const ref = projectFirestore.collection(collection)
@@ -44,7 +44,6 @@ const useFirestore = (collection) => {
             dispatchIfNotCancelled({ type: 'ADDED_DOCUMENT', payload: addedDocument })
 
             }
-        }
         catch (err) {
             dispatchIfNotCancelled({ type: 'ERROR', payload: err.message })
         }
