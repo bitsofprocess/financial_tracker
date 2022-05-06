@@ -21,7 +21,7 @@ const firestoreReducer = (state, action) => {
     }
 }
 
-const useFirestore = (collection) => {
+export const useFirestore = (collection) => {
     const [response, dispatch] = useReducer(firestoreReducer, initialState);
     const [isCancelled, setIsCanceled] = useState(false);
 
@@ -63,4 +63,3 @@ const useFirestore = (collection) => {
 
 }
 
-export default useFirestore;
